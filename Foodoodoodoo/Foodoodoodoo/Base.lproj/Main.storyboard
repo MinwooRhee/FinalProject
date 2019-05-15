@@ -6,42 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Foodoodoodoo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foodoodoodoo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7Q-ME-BuH">
-                                <rect key="frame" x="82" y="253" width="210" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n7Q-ME-BuH" secondAttribute="trailing" constant="83" id="9id-LI-mIQ"/>
-                            <constraint firstItem="n7Q-ME-BuH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="233" id="SOX-ya-hZ2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="n7Q-ME-BuH" secondAttribute="bottom" constant="375" id="g8l-Fd-p5R"/>
-                            <constraint firstItem="n7Q-ME-BuH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="lOQ-mr-YOm"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <connections>
-                        <segue destination="G5v-qT-sx1" kind="show" identifier="startApp" id="936-ui-gwO"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="90" y="134"/>
-        </scene>
         <!--All You can Eat-->
         <scene sceneID="YkN-dP-YeA">
             <objects>
@@ -89,7 +56,7 @@
                                 <state key="normal" title="Edit"/>
                             </button>
                             <connections>
-                                <action selector="editButtonTapped:" destination="FyF-hA-5PB" id="ieb-uF-61x"/>
+                                <action selector="editButtonTapped:" destination="FyF-hA-5PB" id="o6i-Nd-Wby"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="sDr-18-iSn">

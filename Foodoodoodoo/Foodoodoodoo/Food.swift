@@ -16,7 +16,7 @@ struct Food: Codable {
     static let saveURL = documentDirectory.appendingPathExtension("food").appendingPathExtension("plist")
     
     static func loadSampleRecipe() -> [Food] {
-        let Foods = [Food(name: "Kimchi", detailDescription: "Rich in probiotics.")]
+        let Foods = [Food(name: "Kimchi", detailDescription: "Rich in probiotics."), Food(name: "Kimchi2", detailDescription: "Rich in probiotics."), Food(name: "Kimchi3", detailDescription: "Rich in probiotics."), Food(name: "Kimchi4", detailDescription: "Rich in probiotics.")]
         return Foods
     }
 }

@@ -13,7 +13,20 @@ class RecipeTableView: UITableViewController {
     var foods = [Food]()
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Appetizer"
+        case 1:
+            return "Entree"
+        case 2:
+            return "Dessert"
+        default:
+            return ""
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,7 +41,9 @@ class RecipeTableView: UITableViewController {
         
         return cell
     }
+    
     @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
+        print("button tapped")
         let tableViewEditingMode = tableView.isEditing
         
         tableView.setEditing(!tableViewEditingMode, animated: true)
