@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Foodoodoodoo/RecipeTableView.swift"
-            timestampString = "579628084.192876"
+            timestampString = "579811518.254915"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "4"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Foodoodoodoo/RecipeTableView.swift"
-            timestampString = "579628084.193205"
+            timestampString = "579811518.255293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "RecipeTableView"
             landmarkType = "3">
          </BreakpointContent>

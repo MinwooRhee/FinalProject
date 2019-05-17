@@ -41,8 +41,7 @@ class RecipeTableView: UITableViewController {
         
         return cell
     }
-    
-    @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func editButtonTapped(_ sender: Any) {
         print("button tapped")
         let tableViewEditingMode = tableView.isEditing
         
