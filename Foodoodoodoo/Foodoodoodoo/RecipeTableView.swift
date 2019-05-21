@@ -11,6 +11,7 @@ import UIKit
 class RecipeTableView: UITableViewController {
     
     var foods = [Food]()
+    var foodArray = [[Food]]()
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -30,7 +31,7 @@ class RecipeTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foods.count
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,8 +70,37 @@ class RecipeTableView: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         foods = Food.loadSampleRecipe()
+        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44.0
+        
+        for  {
+        case 0:
+            var appetizers: [Food] = []
+            for food in foods {
+                if food.type == "appetizer" {
+                    appetizers.append(food)
+                }
+            }
+            foodArray.append(appetizers)
+
+        case 1:
+            var entree: [Food] = []
+            for food in foods {
+                if food.type == "entree" {
+                    entree.append(food)
+                }
+            }
+
+        case 2:
+            var dessert: [Food] = []
+            for food in foods {
+                if food.type == "dessert" {
+                    dessert.append(food)
+                }
+            }
+        default:
+        }
     }
     
 
