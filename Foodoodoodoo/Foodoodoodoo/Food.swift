@@ -17,7 +17,24 @@ struct Food: Codable {
     var type: String
     
     static let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let saveURL = documentDirectory.appendingPathExtension("food").appendingPathExtension("plist")
+    
+    static let saveURL = documentDirectory.appendingPathExtension("foods").appendingPathExtension("plist")
+    
+    static func saveFoods(foods: [Food]) {
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedFoods = try? propertyListEncoder.encode(foods)
+        try? encodedFoods?.write(to: saveURL, options: .noFileProtection)
+        
+    }
+    static func loadFoods() -> [Food]? {
+        let propertyListDecoder = PropertyListDecoder()
+        if let retrievedFoods = try? Data(contentsOf: saveURL){
+            if let decodedFoods = try? propertyListDecoder.decode(Array<Food>?.self, from: retrievedFoods) {
+                return decodedFoods
+            }
+        }
+        return nil
+    }
     
     static func loadSampleRecipe() -> [Food] {
         let foods = [Food(name: "Kimchi", detailDescription: "Rich in probiotics.", type: "appetizer"), Food(name: "Kimchi pancake", detailDescription: "Rich in probiotics.", type: "entree"), Food(name: "Kimchi Udon", detailDescription: "Rich in probiotics.", type: "entree"), Food(name: "Kimchi Sorbet", detailDescription: "Rich in probiotics.", type: "dessert")]
