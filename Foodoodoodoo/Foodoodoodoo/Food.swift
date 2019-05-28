@@ -13,7 +13,8 @@ import Foundation
 struct Food: Codable {
     
     var name: String
-    var detailDescription: String
+    var ingredients: String
+    var steps: String
     var type: String
     
     static let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -37,7 +38,7 @@ struct Food: Codable {
     }
     
     static func loadSampleRecipe() -> [Food] {
-        let foods = [Food(name: "Kimchi", detailDescription: "Rich in probiotics.", type: "appetizer"), Food(name: "Kimchi pancake", detailDescription: "Rich in probiotics.", type: "entree"), Food(name: "Kimchi Udon", detailDescription: "Rich in probiotics.", type: "entree"), Food(name: "Kimchi Sorbet", detailDescription: "Rich in probiotics.", type: "dessert")]
+        let foods = [Food(name: "Kimchi", ingredients: "veggie", steps: "Rich in probiotics.", type: "appetizer"), Food(name: "Kimchi pancake", ingredients: "veggie", steps: "Rich in probiotics.", type: "entree"), Food(name: "Kimchi Udon", ingredients: "veggie", steps: "Rich in probiotics.", type: "entree"), Food(name: "Kimchi Sorbet", ingredients: "veggie", steps: "Rich in probiotics.", type: "dessert")]
         return foods
     }
 }

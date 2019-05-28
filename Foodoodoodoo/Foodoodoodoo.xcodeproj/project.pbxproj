@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CE80F9702289A34700F1848B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80F96F2289A34700F1848B /* AppDelegate.swift */; };
-		CE80F9722289A34700F1848B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80F9712289A34700F1848B /* ViewController.swift */; };
 		CE80F9752289A34700F1848B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80F9732289A34700F1848B /* Main.storyboard */; };
 		CE80F9772289A34700F1848B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE80F9762289A34700F1848B /* Assets.xcassets */; };
 		CE80F97A2289A34700F1848B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80F9782289A34700F1848B /* LaunchScreen.storyboard */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		CE80F96C2289A34700F1848B /* Foodoodoodoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodoodoodoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE80F96F2289A34700F1848B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE80F9712289A34700F1848B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE80F9742289A34700F1848B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE80F9762289A34700F1848B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE80F9792289A34700F1848B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				CE80F96F2289A34700F1848B /* AppDelegate.swift */,
-				CE80F9712289A34700F1848B /* ViewController.swift */,
 				CE80F9732289A34700F1848B /* Main.storyboard */,
 				CE80F99F2289A51A00F1848B /* RecipeTableView.swift */,
 				CE80F9A12289A89200F1848B /* RecipeCell.swift */,
@@ -268,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE80F9722289A34700F1848B /* ViewController.swift in Sources */,
 				CE80F9702289A34700F1848B /* AppDelegate.swift in Sources */,
 				CEBA09392296D90C00D2203A /* AddEditViewController.swift in Sources */,
 				CE80F9A42289AB8D00F1848B /* Food.swift in Sources */,

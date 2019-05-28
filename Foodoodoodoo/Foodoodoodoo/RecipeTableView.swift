@@ -38,7 +38,7 @@ class RecipeTableView: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCell", for: indexPath)
         
         cell.textLabel?.text = foodArray[indexPath.section][indexPath.row].name
-        cell.detailTextLabel?.text = foodArray[indexPath.section][indexPath.row].detailDescription
+        cell.detailTextLabel?.text = foodArray[indexPath.section][indexPath.row].ingredients
         
         return cell
     }
