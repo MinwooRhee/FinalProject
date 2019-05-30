@@ -10,7 +10,7 @@ import UIKit
 
 class AddEditViewController: UIViewController {
 
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameTextView: UITextView!
     @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var stepsTextView: UITextView!
     
@@ -22,7 +22,7 @@ class AddEditViewController: UIViewController {
         super.viewDidLoad()
         
         if let food = food {
-            nameTextField.text = String(food.name)
+            nameTextView.text = String(food.name)
             ingredientsTextView.text = food.ingredients
             stepsTextView.text = food.steps
         }
@@ -35,19 +35,26 @@ class AddEditViewController: UIViewController {
         
         guard segue.identifier == "saveUnwind" else { return }
         
-        let name = nameTextField.text ?? ""
+        let name = nameTextView.text ?? ""
         let ingredients = ingredientsTextView.text ?? ""
         let steps = stepsTextView.text ?? ""
         food = Food(name: name, ingredients: ingredients, steps: steps, type: "appetizer")
     }
     
     func updateSaveButtonState() {
-        let nameText = nameTextField.text ?? ""
+        let nameText = nameTextView.text ?? ""
         let ingredientsText = ingredientsTextView.text ?? ""
         let stepsText = stepsTextView.text ?? ""
         saveButton.isEnabled = !nameText.isEmpty && !ingredientsText.isEmpty && !stepsText.isEmpty
     }
     
+    @IBAction func textEditingChanged(_ sender: UITextView) {
+        updateSaveButtonState()
+    }
+    
+    @IBAction func returnPressed(_ sender: UITextView) {
+        sender.resignFirstResponder()
+    }
 
     /*
     // MARK: - Navigation

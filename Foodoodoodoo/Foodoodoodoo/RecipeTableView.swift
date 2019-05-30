@@ -94,7 +94,33 @@ class RecipeTableView: UITableViewController {
         tableView.estimatedRowHeight = 44.0
     }
     
-
+    @IBAction func unwindToEmojiTableView(segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveUnwind" else { return }
+        let sourceViewController = segue.source as! AddEditViewController
+        
+        if let food = sourceViewController.food {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                foods[selectedIndexPath.row] = food
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            } else {
+                let newIndexPath = IndexPath(row: foods.count, section: 0)
+                foods.append(food)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        }
+    }
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "EditFood" {
+            let indexPath = tableView.indexPathForSelectedRow!
+            let food1 = foods[indexPath.row]
+            //let navController = segue.destination as! UINavigationController
+            let destinationVC = segue.destination as! AddEditViewController
+            destinationVC.food = food1
+        }
+    }
+*/
     
 
     /*

@@ -57,7 +57,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="sDr-18-iSn">
                             <connections>
-                                <segue destination="XK4-oE-YSG" kind="show" id="Rpl-Yv-fUS"/>
+                                <segue destination="XK4-oE-YSG" kind="show" identifier="EditFood" id="Rpl-Yv-fUS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -88,13 +88,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V2W-dk-g63">
-                                <rect key="frame" x="16" y="133" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjo-oa-nTp">
                                 <rect key="frame" x="16" y="183" width="86" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -120,21 +113,33 @@
                                 <rect key="frame" x="168" y="93" width="191" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hdb-oo-guK">
+                                <rect key="frame" x="16" y="132" width="129" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="g7i-Ew-Dxh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="PNs-0D-P5O">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="qYd-q7-bQS"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="qYd-q7-bQS">
+                            <connections>
+                                <segue destination="wCe-hH-LMg" kind="unwind" unwindAction="unwindToEmojiTableViewWithSegue:" id="Odz-lu-oAe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ingredientsTextView" destination="Fvb-N9-jqU" id="McK-RQ-WvU"/>
-                        <outlet property="nameTextField" destination="V2W-dk-g63" id="AIi-YN-IHF"/>
+                        <outlet property="nameTextView" destination="hdb-oo-guK" id="DLt-DA-wq5"/>
                         <outlet property="saveButton" destination="qYd-q7-bQS" id="Jqe-ZP-WeX"/>
                         <outlet property="stepsTextView" destination="ejo-Ik-WQm" id="SzY-Lq-cAh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14p-oy-AaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wCe-hH-LMg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2501.5999999999999" y="133.5832083958021"/>
         </scene>
