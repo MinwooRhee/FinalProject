@@ -12,9 +12,11 @@ class RecipeTableView: UITableViewController {
     
     var foods = [Food]()
     var foodArray = [[Food](), [Food](), [Food]()]
+    // Array of arrays of food, sorted by type
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
+        // one section for each type of food
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -28,10 +30,12 @@ class RecipeTableView: UITableViewController {
         default:
             return ""
         }
+        // give names to the sections
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foodArray[section].count
+        // set numbers of rows in sections for foods in each array
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,16 +45,19 @@ class RecipeTableView: UITableViewController {
         cell.detailTextLabel?.text = foodArray[indexPath.section][indexPath.row].ingredients
         
         return cell
+        // display name and ingredients of foods on each cell
     }
     @IBAction func editButtonTapped(_ sender: Any) {
         print("button tapped")
         let tableViewEditingMode = tableView.isEditing
         
         tableView.setEditing(!tableViewEditingMode, animated: true)
+        // goes into editing mode when edit button is tapped
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
+
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -59,6 +66,7 @@ class RecipeTableView: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
         Food.saveFoods(foods: foods)
+        // delete a cell
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -66,6 +74,7 @@ class RecipeTableView: UITableViewController {
         foods.insert(movedFood, at: to.row)
         tableView.reloadData()
         Food.saveFoods(foods: foods)
+        // move a food to different section
     }
     
     override func viewDidLoad() {
@@ -77,6 +86,8 @@ class RecipeTableView: UITableViewController {
         else {
             foods = Food.loadSampleRecipe()
         }
+        // load recipes. if there aren't any, load sample recipes
+        
         for  food in foods {
             switch food.type {
             case "appetizer":
@@ -88,6 +99,7 @@ class RecipeTableView: UITableViewController {
             default:
                 foodArray[0].append(food)
             }
+            // append foods to arrays corresponding to types
         }
         
         tableView.rowHeight = UITableView.automaticDimension
@@ -108,7 +120,10 @@ class RecipeTableView: UITableViewController {
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
         }
+        Food.saveFoods(foods: foods)
+        // unwind function
     }
+    
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

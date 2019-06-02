@@ -26,6 +26,8 @@ class AddEditViewController: UIViewController {
             ingredientsTextView.text = food.ingredients
             stepsTextView.text = food.steps
         }
+        
+        updateSaveButtonState()
 
         // Do any additional setup after loading the view.
     }
